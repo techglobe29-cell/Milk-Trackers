@@ -47,7 +47,9 @@ st.sidebar.header("📥 Log New Entry")
 milk_form = st.sidebar.form(key="milk_entry_form", clear_on_submit=True)
 date = milk_form.date_input("Select Date", datetime.now())
 qty = milk_form.number_input("Quantity (Liters)", min_value=0.0, step=0.1)
-price = milk_form.number_input("Price per Liter (₹)", min_value=0.0, value=60.0)
+
+# Settled default value to 85.0 here
+price = milk_form.number_input("Price per Liter (₹)", min_value=0.0, value=85.0)
 submit = milk_form.form_submit_button("💾 Save Record")
 
 if submit and qty > 0:
